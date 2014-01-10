@@ -1,0 +1,8 @@
+fr-CA:
+  unauthenticated:
+    form:
+      email: 'Courriel'
+      password: 'Mot de passe'
+  time:
+    formats:
+      long: '%m %d %y'

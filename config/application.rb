@@ -10,6 +10,8 @@ module PothiboCom
   class Application < Rails::Application
     config.from_file 'settings.yml'
 
+    I18n.default_locale = :'fr-CA'
+
     config.to_prepare do
       Warden::Strategies.add :password, PasswordStrategy
     end

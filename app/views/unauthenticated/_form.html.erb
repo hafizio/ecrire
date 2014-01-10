@@ -1,0 +1,13 @@
+<div id="newUserSession">
+  <%= form_for User.new, url: session_path, as: 'session' do |f| %>
+    <div class="fields">
+      <%= f.email_field :email, placeholder: t('.email') %>
+      <%= f.password_field :password, placeholder: t('.password') %>
+    </div>
+    <div class="actions">
+      <%= f.submit '&#59200;'.html_safe, id: 'submitUserCredentials' %>
+      <%= link_to '&#10006;'.html_safe, "javascript:void(0)", class: %w(dismiss) %>
+    </div>
+  <% end %>
+</div>
+

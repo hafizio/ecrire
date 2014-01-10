@@ -25,4 +25,22 @@ module ApplicationHelper
     end
   end
 
+  def admin_link
+    return if current_user.nil?
+    content_tag :li do
+      link_to '&#9874;'.html_safe, admin_root_path, id: 'adminLink', class: %w(link icons)
+    end
+  end
+
+  def logout_link
+    return if current_user.nil?
+    content_tag :li do
+      button_to '&#59201;'.html_safe,
+        session_path,
+        method: :delete,
+        class: %w(icons link),
+        form_class: %w(logout)
+    end
+  end
+
 end

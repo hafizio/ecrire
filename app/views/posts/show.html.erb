@@ -1,21 +1,23 @@
-<%= content_tag :section, id: "post-#{@post.id}", class: %w(post) do %>
+<%= content_tag :main, class: %w(content), id: "post-#{@post.id}", role: "main" do %>
 
-  <header class="post title">
-    <%= link_to image_tag("profile.png", alt: "I'm signing the Declaration of independance!"), root_path, class: %w(logo home link) %>
-    <%= content_tag :h1, @post.title, class: %w(entry-title) %>
-  </header>
+  <article class="post">
 
-  <article class="content">
-    <style scoped><%= @post.stylesheet %></style>
-    <%= @post.content.html_safe %>
-    <div class="social">
-      <a href="https://twitter.com/share" class="twitter-share-button" data-via="pothibo">Tweet</a>
-      <a href="http://news.ycombinator.com/submit" class="hn-share-button">Vote on HN</a>
-      <a href="http://feeds.feedburner.com/pothibo" id="feedburner">
-        <img src="http://feeds.feedburner.com/~fc/pothibo?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" />
-      </a>
-    </div>
-    <%= render "comments" %>
+    <span class="post-meta">
+      <%= content_tag :time, l(@post.published_at, format: :long), datetime: @post.published_at %>
+    </span>
+
+    <%= content_tag :h1, @post.title, class: %w(post-title) %>
+
+    <%= content_tag :section, class: %w(post-content) do %>
+      <style scoped><%= @post.stylesheet %></style>
+      <%= @post.content.html_safe %>
+    <% end %>
+
   </article>
+
+  <section class="comments">
+    <%= render 'comments', url: post_path(@post.published_at.year, @post.published_at.month, @post.slug, only_path: false) %>
+  </section>
+
 
 <% end %>

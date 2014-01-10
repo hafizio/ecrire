@@ -1,0 +1,231 @@
+@mixin login {
+  #new_session {
+    line-height: 50px;
+    width: 800px;
+    margin: 0 auto;
+    padding-top: 8px;
+    text-align: center;
+    font-weight: lighter;
+  }
+
+  .fields {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 80px);
+
+    & > input {
+      width: calc(50% - 4px);
+      display: inline-block;
+      border: 3px solid #255077;
+      font-size: 1.2em;
+      vertical-align: middle;
+      padding: 4px 8px;
+    }
+  }
+
+  .actions {
+    display: inline-block;
+    vertical-align: top;
+    & > input, & > a {
+      background: none;
+      border: none;
+      font-family: entypo;
+      font-size: 5rem;
+      outline: none;
+
+      &.dismiss:hover {
+        color: rgb(162, 30, 30);
+      }
+    }
+
+    #submitUserCredentials {
+      color: rgb(70, 124, 70);
+      transition: color ease 0.3s;
+      &:hover {
+        color: rgb(70, 184, 70);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  header.site-header #Logo {
+    height: 65px;
+    width: 150px;
+    top: 0;
+    left: calc(50% - 75px);
+    left: -webkit-calc(50% - 75px);
+    background-image: image-url('logo-small.png');
+    background-repeat: no-repeat;
+    background-position: 50% center;
+  }
+
+  .site-header #Logo .title {
+    padding-top: 16px;
+  }
+
+  .site-header ol.menu {
+    display: none;
+    padding: 60px 20px 20px;
+    color: #FFF;
+  }
+}
+
+@media (min-width: 601px) {
+  .site-header #Logo {
+    height: 150px;
+    width: 220px;
+    top: -12px;
+    left: calc(50% - 110px);
+    left: -webkit-calc(50% - 110px);
+    background-image: image-url('logo.png');
+  }
+
+  .site-header #Logo .title {
+    margin: 48px 0;
+    text-shadow: 0 2px 3px rgba(143, 143, 143, 0.51);
+  }
+
+  .site-header .menu {
+    height: 65px;
+  }
+
+  #MenuListPost {
+    display: none;
+  }
+
+  #MenuListAbout, #MenuListRoot {
+    float: right;
+    width: 50%;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #MenuListRoot {
+    text-indent: -60px;
+  }
+
+  #MenuListAbout {
+    text-indent: 60px;
+    font-size: 1.6rem;
+  }
+}
+
+.site-header {
+  position: relative;
+  min-height: 67px;
+  background: #333;
+  font-size: 1.1em;
+  margin-top: 12px;
+
+  @include login;
+}
+
+.site-header:before, .site-header:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 7px;
+  background-repeat: repeat-x;
+}
+
+.site-header:before {
+  top: 0;
+  background-image: image-url("stitches.png"), linear-gradient(to top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 100%);
+  background-image: image-url("stitches.png"), -webkit-linear-gradient(bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 100%);
+  background-image: image-url("stitches.png"), -ms-linear-gradient(bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.3) 100%);
+  background-position: 0 5px, top;
+}
+
+.site-header:after {
+  bottom: 0;
+  background-image: image-url("stitches.png"), linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 100%);
+  background-image: image-url("stitches.png"), -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 100%);
+  background-image: image-url("stitches.png"), -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.3) 100%);
+  background-position: top, top;
+}
+
+.site-header .menu {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+.site-header #Logo {
+  position: absolute;
+  z-index: 2;
+}
+
+.site-header a {
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.site-header a:not(:hover) {
+  color: #EFEFEF;
+}
+
+.site-header #LinkHome {
+  font-family: Lobster;
+  display: inline-block;
+}
+
+.site-header #LinkHome:hover {
+  color: #CF4242;
+}
+
+.site-header #Logo .title {
+  font-family: Lobster;
+  display: block;
+  text-align: center;
+  color: #EFEFEF;
+}
+
+.site-header .left, .site-header .right {
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.site-header .left {
+  padding-right: 120px;
+}
+
+.site-header .right {
+  padding: 0 68px 0 120px;
+  font-size: 0.6em;
+}
+
+.site-header .navigation {
+  margin-top: 18px;
+}
+
+.site-header .link {
+  color: #FFF;
+  cursor: pointer;
+}
+
+.site-header .link:hover {
+  color: #57A3E8;
+}
+
+.site-header .link {
+    transition: color ease 0.3s;
+}
+
+.site-header .link.icons {
+  font-family: entypo;
+  border: none;
+  background: none;
+  font-size: 4.0rem;
+}
+
+#MenuListRoot {
+  font-family: Lobster;
+}
+

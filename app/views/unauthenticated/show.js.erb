@@ -1,8 +1,20 @@
-var $admin = $("#new_session")
-if ($admin.length > 0) {
-  $html.find("#session_email").focus()
-  return
-}
-var $html = $("<%= j render("menu") %>")
-$("body").prepend($html)
-$html.find("#session_email").focus()
+(function() {
+  if ($("#newUserSession").length > 0) {
+    return
+  }
+
+  var $menu = $('<%= j render("form") %>').hide()
+  var $header = $(".site-header")
+  $header.children().fadeOut('fast', function() {
+    $menu.appendTo($header).fadeIn()
+    $menu.find('#session_email').focus()
+  })
+
+  $menu.on('click', '.dismiss', function() {
+    $menu.fadeOut(function() {
+      $menu.remove()
+      $header.children().fadeIn()
+    })
+  })
+
+})()
