@@ -88,6 +88,13 @@
 
   .site-header .menu {
     height: 65px;
+    text-align: right;
+
+    li {
+      display: inline-block;
+      line-height: 68px;
+      padding: 0 12px;
+    }
   }
 
   #MenuListPost {
