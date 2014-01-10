@@ -6,3 +6,32 @@ fr-CA:
   time:
     formats:
       long: '%m %d %y'
+  layouts:
+    application:
+      admin: "Administration"
+  admin:
+    navigation:
+      posts: "Entrées"
+      partials: "Partiels"
+      blog: "Blogue"
+      logout: "Déconnecter"
+    partials:
+      form:
+        title: "Titre"
+        content: "Écrire"
+        stylesheet: "Style"
+        javascript: "Javascript"
+        preview: "Aperçu"
+    posts:
+      index:
+        links:
+          post: "Entré"
+      update:
+        successful: "%{title} sauvegarder!"
+      form:
+        title: "Titre"
+        content: "Écrire"
+        stylesheet: "Style"
+        javascript: "Javascript"
+        preview: "Aperçu"
+        slug: "Créer un perma-link. Un lien sera créer pour vous sinon."
