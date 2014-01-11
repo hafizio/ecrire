@@ -10,7 +10,7 @@ class PostDecorator < Cubisme::Decorator::Base
       content = [
         link_to(record.title,
                 post_path(year: record.published_at.year,
-                          month: l(record.published_at, format: "%m"),
+                          month: l(record.published_at.month),
                           id: record.slug, only_path: false))
       ]
       if options[:excerpt] == true
@@ -32,7 +32,7 @@ class PostDecorator < Cubisme::Decorator::Base
   end
 
   def time
-    content_tag :time, l(record.published_at, format: :long), datetime: record.published_at
+    content_tag :time, l(record.published_at, format: :long), datetime: l(record.published_at, format: :short)
   end
 
   def excerpt
