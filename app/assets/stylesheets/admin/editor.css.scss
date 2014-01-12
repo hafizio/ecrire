@@ -181,17 +181,10 @@
     font-weight: lighter;
     flex: 1 50%;
     padding: 32px 0;
+    position: relative;
 
     .content.preview {
       margin: 0 auto;
-    }
-
-    .sticky {
-      position: absolute;
-      top: 0px;
-      left: 2%;
-      color: #BABABA;
-      text-shadow: 0 1px #FFF;
     }
   }
 }
