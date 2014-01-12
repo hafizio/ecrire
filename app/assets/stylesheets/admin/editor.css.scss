@@ -182,8 +182,8 @@
     flex: 1 50%;
     padding: 32px 0;
 
-    & > .preview {
-      position: relative;
+    .content.preview {
+      margin: 0 auto;
     }
 
     .sticky {
