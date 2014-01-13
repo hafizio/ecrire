@@ -23,7 +23,7 @@ class Editor
     elements = {
       $content: $(".editor.content"),
       $stylesheet: $(".editor.stylesheet"),
-      $preview: $(".content.preview"),
+      $preview: $(".post.wrapper.preview"),
     }
 
     @title =  new Title()

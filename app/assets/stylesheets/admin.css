@@ -2,6 +2,7 @@
  *= require_self
  *= require ./base
  *= require ./fonts
+ *= require ./blog/post
  *= require_tree ./admin
  */
 

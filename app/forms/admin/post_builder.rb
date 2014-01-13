@@ -27,9 +27,8 @@ module Admin
     protected
 
     def preview
-      content_tag(:div, class: %w(content preview)) do
+      content_tag(:div, class: %w(post wrapper preview)) do
         [
-          content_tag(:span, t('.preview'), class: %w(sticky)),
           content_tag(:style),
           content_tag(:script, nil, class: %w(preview), type: 'text/javascript'),
           content_tag(:article, nil, class: %w(preview content)),
