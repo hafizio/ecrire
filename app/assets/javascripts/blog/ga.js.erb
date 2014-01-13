@@ -1,6 +1,6 @@
 var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-16312790-3']);
-_gaq.push(['_setDomainName', 'pothibo.com']);
+_gaq.push(['_setAccount', '<%= Rails.configuration.ga.account %>']);
+_gaq.push(['_setDomainName', '<%= Rails.configuration.ga.domain %>']);
 _gaq.push(['_trackPageview']);
 
 setTimeout(function() {
@@ -9,7 +9,7 @@ setTimeout(function() {
     _gaq.push(['_trackEvent', 'scroll', 'read']);
   }
 
-  document.addEventListener('scroll', unbounce) 
+  document.addEventListener('scroll', unbounce)
 }, 5000);
 
 (function() {

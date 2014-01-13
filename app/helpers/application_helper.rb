@@ -10,11 +10,11 @@ module ApplicationHelper
 
   def title
     return @post.title unless @post.nil?
-    return "Blog de lamarmite.ca"
+    return Rails.configuration.meta.title
   end
 
   def description_meta_tag
-    content_tag :meta, nil, name: 'description', content: 'Blog culinaire sur des recettes et techniques de cuisine.'
+    content_tag :meta, nil, name: 'description', content: Rails.configuration.meta.description
   end
 
   def open_graph_type
