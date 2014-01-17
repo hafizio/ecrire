@@ -59,29 +59,40 @@ fr-CA:
   layouts:
     application:
       admin: "Administration"
+
   admin:
     navigation:
       posts: "Entrées"
       partials: "Partiels"
       blog: "Blogue"
       logout: "Déconnecter"
-    partials:
-      form:
-        title: "Titre"
-        content: "Écrire"
-        stylesheet: "Style"
-        javascript: "Javascript"
-        preview: "Aperçu"
-    posts:
-      index:
-        links:
-          post: "Entré"
-      update:
-        successful: "%{title} sauvegarder!"
-      form:
+
+    form:
+      image:
+        drop_pad: "Déposer votre image ici."
+      post:
         title: "Titre"
         content: "Écrire"
         stylesheet: "Style"
         javascript: "Javascript"
         preview: "Aperçu"
         slug: "Créer un perma-link. Un lien sera créer pour vous sinon."
+        options:
+          fields:
+            text: 'Écrire'
+            CSS: 'Stylesheet'
+            JS: 'Javascript'
+          preview: "Aperçu"
+          partials: "Partiels"
+          images:
+            link: "Images"
+            post_not_persisted: "Les images ne sont pas disponible. Sauvegarder le billet en premier."
+
+    posts:
+      index:
+        new_idea: "Chaque grandes idées commence quelque part."
+        start_writing: "Écrire."
+        links:
+          post: "Billet"
+      update:
+        successful: "%{title} sauvegarder!"
