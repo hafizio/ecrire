@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  has_many :images
+
   scope :status, lambda {|status|
     if status.eql?("published")
       where "posts.published_at IS NOT NULL"
@@ -12,10 +14,10 @@ class Post < ActiveRecord::Base
   scope :slug, lambda { |slug| where("posts.slug is ?", slug) }
   scope :without, lambda { |post| where("posts.id != ?", post.id) }
 
-  validates :title, presence: true
-  validates :slug, presence: true, on: :update
+  validates :title, presence: true, uniqueness: true
+  validates :slug, presence: true, uniqueness: true
 
-  before_create :create_slug_if_nil
+  before_validation :create_slug_if_nil
   before_save :generate_excerpt
 
   def status=(new_status)

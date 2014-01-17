@@ -52,3 +52,12 @@ a {
 ol.list {
   overflow-y: scroll;
 }
+
+h1, h2, h3, h4, h5 {
+  font-weight: 100;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
