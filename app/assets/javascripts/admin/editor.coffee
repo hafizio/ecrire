@@ -15,7 +15,7 @@ $(document).on "DOMContentLoaded page:load", ->
       $this.siblings(".active").removeClass("active")
       $this.addClass("active")
 
-    $(".preview.options #previewLink").on 'click', ->
+    $(".preview.options #previewLink").on 'click', (e) ->
       window.Editor.sidebarContent.show('preview')
 
     $(document).trigger('editor:loaded', window.Editor)
@@ -61,7 +61,8 @@ class SideBarContent
     @templates['preview'] = $wrapper.children(".content.preview")
 
   show: (name) =>
-    @$wrapper.empty().append(@templates[name])
+    @$wrapper.children().detach()
+    @$wrapper.html(@templates[name])
 
   add: (name, dom) =>
     if @templates[name]? 
