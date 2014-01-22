@@ -1,14 +1,13 @@
 en:
   admin:
     navigation:
-      blog: "Back to the blog"
       posts: "Posts"
       partials: "Partials"
       logout: "Log out"
 
     form:
       image:
-        drop_pad: "Déposer votre image ici."
+        drop_pad: "Drop your image here."
       post:
         title: "Your title here"
         content: "Write"
