@@ -11,7 +11,8 @@ html, body {
 }
 
 a {
-  color: rgb(114, 153, 204);
+  color: #3B6397;
+  font-weight: lighter;
 }
 
 body {
@@ -23,6 +24,12 @@ body {
   font-weight: 200;
   font-size: 13px;
   color: #6d645c;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 100;
 }
 
 #adminNavigationOptions {

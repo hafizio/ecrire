@@ -1,38 +1,77 @@
-#blogHeader {
-  margin: 100px 0;
-  height: 400px;
-  text-align: center;
-  & > img {
-    width: 160px;
+@mixin footer-content {
+  background: rgba(95, 86, 74, 1);
+  width: 100%;
+  color: #FFF;
+  flex: 1 100%;
+
+  & > img, & > .author {
+    display: inline-block;
     vertical-align: top;
   }
 
-  & > p {
-    width: 25%;
-    margin: 60px auto;
-    font-size: 1.4em;
-    line-height: 1.5em;
+  & > img {
+    height: 100px;
+    margin: 12px 24px;
+  }
+
+  & > .author {
+    margin: 36px 0 24px 0;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  .icons {
+    font-family: entypo-social;
+    font-size: 3.5em;
+    text-decoration: none;
+    color: inherit;
+    margin: 0 8px 0 0;
+    transition: color 0.5s;
+    &:hover {
+      color: #000;
+    }
   }
 }
 
-#indexNavigation {
-  height: 500px;
-  text-align: center;
-  background: rgba(219, 215, 204, 0.5);
-  .icons {
-    font-family: entypo-social;
-    font-size: 8em;
-    text-decoration: none;
-    margin: 0 24px;
+@mixin post {
+  display: inline-block;
+  max-width: 350px;
+  vertical-align: top;
+  margin: 0 12px;
+  text-align: left;
+  background-color: rgb(250, 247, 234);
+  border: 1px solid #AA9C77;
+  border-radius: 3px;
+
+  & > h3, & > .excerpt, & > .timestamp {
+    margin: 24px;
   }
 
-  .wrapper {
-    padding: 100px 0;
+  & > h3 {
+    font-size: 1.6em;
+    text-decoration: none;
+  }
 
-    p {
-      font-size: 1.3em;
-      line-height: 1.3em;
-    }
+  & > .timestamp {
+    color: #BABABA;
+  }
+}
+
+#blogHeader {
+  flex: 0 200px;
+  margin: 100px auto;
+  text-align: center;
+
+  h1 {
+    font-size: 3em;
+    text-shadow: 0 3px 3px #B8A990;
+  }
+
+  p {
+    width: 600px;
+    font-size: 1.3em;
   }
 }
 
@@ -42,28 +81,46 @@
 }
 
 #articlesOverview {
-  position: relative;
+  flex: 1 100%;
   padding: 48px 0;
-  text-align: center;
+  margin: 0;
 
   h2 {
-    text-align: center;
-  }
-  .post {
     text-align: left;
-    padding: 24px 0;
-    border-bottom: 1px solid #CCC;
+    padding: 10px 24px;
+    background: rgba(219, 215, 204, 0.5);
+  }
+
+  .post {
+    @include post;
   }
 
   .pagination {
+    display: inline-block;
     margin: 24px 0;
     font-size: 1.3em;
   }
 }
 
-#posts-index {
-  .wrapper {
-    max-width: 900px;
-    margin: 0 auto;
+footer {
+  flex: 0 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  & > h5 {
+    font-family: 'silent-reaction';
+    font-size: 3em;
+    text-align: center;
+    margin: 0 0 -14px;
+    color: rgba(95, 86, 74, 1);
+  }
+
+  & > .wrapper {
+    @include footer-content;
+  }
+
+  a {
+    color: inherit;
   }
 }

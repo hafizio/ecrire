@@ -1,35 +1,34 @@
 <header id="blogHeader">
-  <p>Welcome to <a href="https://github.com">Ecrire</a>.</p>
-  <p>This is the page your user will see when they reach your blog.</p>
+  <h1>Bonjour.</h1>
 
-  <p>This page can be customized by editing <code class="language-bash">app/views/posts/index.html</code></p>
+  <p>If you're a rails, or frontend developer, you might find interesting article I've wrote based on personal experience. My goal is to write about issues I faced and solution I found so you don't find yourself wasting time on the same stuff.</p>
 
-  <p>If you want to edit the HTML for you blog post, the page to edit is <code class="language-bash">app/views/posts/show.html</code></p>
+  <p>I'm also available for freelancing gigs right now. Interested?</p>
 
+  <p><a href="mailto:pothibo@gmail.com">Send me an e-mail!</a></p>
 </header>
 
-<section id="indexNavigation">
-  <div class="wrapper">
-
-    <p>You can also modify CSS and Javascript that will affect your blog as a whole.</p>
-    <p>All CSS/JS files are located in <code class="language-bash">app/assets/</code> folder.
-      If you want to change how your whole blog look, you will want to change CSS in the
-      <code class="language-bash">blog/</code> folder. Conversely, if you want to change how
-      your post look, you will need to change the CSS in the <code class="language-bash">post/</code> folder.</p>
-
-    <p><strong>Don't forget to setup a S3 instance so you can use images on your blog!</strong></p>
-
-  </div>
-</section>
-
 <section id="articlesOverview">
-
-  <h2>Happy blogging!</h2>
-
+  <h2>
+    <span><%= @posts.total_count %> articles published so far</span>
+    <%= paginate @posts %>
+  </h2>
   <div class="wrapper">
     <% @posts.each do |post| %>
       <%= render "post", post: post %>
     <% end %>
-    <%= paginate @posts %>
-  </section>
-</div>
+  </div>
+</section>
+
+
+<footer>
+  <h5>Proudly made by</h5>
+  <div class="wrapper">
+    <%= image_tag "profile.png", alt: "I'm signing the Declaration of independance!" %>
+    <div class="author">
+      <h2>Pier-Olivier Thibault</h2>
+      <a class="icons" href="https://twitter.com/pothibo" target="_blank">&#62217;</a>
+      <a class="icons" href="https://github.com/pothibo" target="_blank">&#62208;</a>
+    </div>
+  </div>
+</footer>
