@@ -1,6 +1,6 @@
 module ApplicationHelper
   def admin_navigation
-    content_tag :header, id: 'adminNavigationOptions' do
+    content_tag :menu, id: 'adminNavigationOptions' do
       [
         menu.render,
         button_to(t("admin.navigation.logout"), session_path, method: :delete)

@@ -39,7 +39,7 @@
   display: inline-block;
   max-width: 350px;
   vertical-align: top;
-  margin: 0 12px;
+  margin: 12px;
   text-align: left;
   background-color: rgb(250, 247, 234);
   border: 1px solid #AA9C77;
@@ -83,7 +83,7 @@
 #articlesOverview {
   flex: 1 100%;
   padding: 48px 0;
-  margin: 0;
+  margin: 0 0 50px 0;
 
   h2 {
     text-align: left;
@@ -103,10 +103,10 @@
 }
 
 footer {
-  flex: 0 300px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  flex: 0 180px;
 
   & > h5 {
     font-family: 'silent-reaction';
