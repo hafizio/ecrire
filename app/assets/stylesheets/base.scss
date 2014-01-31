@@ -1,9 +1,13 @@
 $header-height: 46px;
 $fonts: Helvetica, sans-serif;
 
-html, body {
+html {
   min-height: 100%;
+}
+
+html, body {
   display: flex;
+  flex: 1 auto;
 }
 
 * {
@@ -25,7 +29,6 @@ body {
   font-weight: 200;
   font-size: 13px;
   color: #6d645c;
-  display: flex;
   flex-direction: column;
 }
 
@@ -34,7 +37,7 @@ h1, h2, h3, h4, h5 {
 }
 
 #adminNavigationOptions {
-  height: $header-height;
+  flex: 0 $header-height;
   background: rgb(71, 101, 145);
   position: relative;
   border-bottom: 1px solid rgb(52, 69, 99);
