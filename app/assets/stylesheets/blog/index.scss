@@ -37,7 +37,7 @@
 
 @mixin post {
   display: inline-block;
-  max-width: 350px;
+  width: 350px;
   vertical-align: top;
   margin: 12px;
   text-align: left;
@@ -89,6 +89,10 @@
     text-align: left;
     padding: 10px 24px;
     background: rgba(219, 215, 204, 0.5);
+  }
+
+  .wrapper {
+    text-align: center;
   }
 
   .post {
