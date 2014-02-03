@@ -2,11 +2,9 @@
   .pagination {
     font-size: 1.2em;
     text-align: center;
-    margin: 12px 0;
-    flex-grow: 0;
-    flex-shrink: 0;
-    -webkit-flex-grow: 0;
-    -webkit-flex-shrink: 0;
+    height: 58px;
+    line-height: 50px;
+    background: #F1EEE7;
   }
 }
 
@@ -76,12 +74,8 @@ sidebar.listing {
 
   header {
     width: 100%;
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: 38px;
-    -webkit-flex-grow: 0;
-    -webkit-flex-shrink: 0;
-    -webkit-flex-basis: 38px;
+    flex: 0 0 38px;
+    -webkit-flex: 0 0 38px;
     font-size: 1.0rem;
     position: relative;
     box-sizing: content-box;
@@ -97,8 +91,10 @@ sidebar.listing {
     text-align: left;
     margin: 0;
     padding: 0;
-
+    flex: 1 100%;
+    overflow-y: scroll;
     @include item;
-    @include pagination;
   }
+
+  @include pagination;
 }

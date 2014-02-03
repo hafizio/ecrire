@@ -4,7 +4,7 @@
     display: -webkit-flex;
     flex-direction: row;
     -webkit-flex-direction: row;
-    min-height: calc(100% - 46px);
+    flex: 1 100%;
   }
 
   #postContainer {
@@ -15,11 +15,6 @@
     -webkit-flex: 4 100%;
     -webkit-flex-basis: 300px;
     position: relative;
-  }
-
-  #postsList .list {
-    flex-grow: 1;
-    -webkit-flex-grow: 1;
   }
 
   #newIdea {
