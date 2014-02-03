@@ -112,12 +112,16 @@ footer {
   display: flex;
   flex-direction: column;
   flex: 0 180px;
+  position: relative;
 
   & > h5 {
+    position: absolute;
+    top: -44px;
+    width: 100%;
     font-family: 'silent-reaction';
     font-size: 3em;
     text-align: center;
-    margin: 0 0 -14px;
+    margin: 0;
     color: rgba(95, 86, 74, 1);
   }
 
