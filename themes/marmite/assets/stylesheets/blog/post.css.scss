@@ -1,0 +1,65 @@
+.content.preview, article.post {
+    position: relative;
+    width:80%;
+    max-width: 700px;
+    margin: 4rem auto;
+    padding-bottom: 4rem;
+    border-bottom: #EBF2F6 1px solid;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+/* Add a little circle in the middle of the border-bottom on our .post
+   just for the lolz and stylepoints. */
+article.post:after {
+    display: block;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: #E7EEF2 1px solid;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    background: #fff;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    box-shadow: #fff 0 0 0 5px;
+}
+
+.post-title {
+    margin:0;
+}
+
+.post-title a {
+    text-decoration: none;
+}
+
+.post-excerpt p {
+    margin: 1.6rem 0 0 0;
+    font-size: 0.9em;
+    line-height: 1.6em;
+}
+
+.post-meta {
+    display: inline-block;
+    margin: 0 0 5px 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    color: #9EABB3;
+}
+
+.post-meta a {
+    color: #9EABB3;
+    text-decoration: none;
+}
+
+.post-meta a:hover {
+    text-decoration: underline;
+}
+.fb-comments.fb_iframe_widget {
+  width: 700px;
+  display: block;
+  margin: 0 auto;
+}
