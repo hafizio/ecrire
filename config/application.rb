@@ -25,13 +25,22 @@ module PothiboCom
       }
     end
 
-    config.assets.precompile += [/(?:\/|\\|\A)admin\.(css|js)$/]
+    config.assets.precompile = [
+      lambda do |filename, path|
+        path =~ /(app|themes\/#{Rails.configuration.theme})\/assets/ && !%w(.js .css).include?(File.extname(filename))
+      end,
+      /(?:\/|\\|\A)(admin|application)\.(css|js)$/
+    ]
 
     config.action_view.field_error_proc = Proc.new do |html_tag, instance|
       html_tag
     end
 
     config.i18n.load_path = Dir[Rails.root.join('config', 'locales', '**', '*.yml')]
+
+    config.assets.paths = %w(images fonts javascripts stylesheets).map do |asset_type|
+      (Rails.application.root + ['themes', Rails.configuration.theme, 'assets', asset_type].join('/')).to_s
+    end
 
   end
 
