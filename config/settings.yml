@@ -9,13 +9,15 @@ defaults: &defaults
     secret_key: 'secret_key'
   database:
     name: "blog"
-    user: "blog"
+    username: "blog"
     password: "dev-blog-123"
 
   meta:
     title: "pothibo's blog"
     author: 'https://google.com/+PierOlivierThibault'
     description: 'Ruby, Javascript, CSS blog. I use my experience to help you understand different programming concepts.'
+
+  theme: "default"
 
 
 development:
