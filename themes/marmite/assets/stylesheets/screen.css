@@ -1,26 +1,7 @@
-/* ==========================================================================
-   Table of Contents
-   ========================================================================== */
-
 /*
-   0.   Includes
-   1.   General
-   2.   Something else
+ *= require normalize.css
  */
 
-/* ==========================================================================
-   0. Includes - Ground zero
-   ========================================================================== */
-
-@import url(normalize.css);
-
-
-/* ==========================================================================
-   1. Icons - Sets up the icon font and respective classes
-   ========================================================================== */
-
-
-/* Apply these base styles to all icons */
 .icon-ghost, .icon-feed, .icon-twitter, .icon-google-plus, .icon-facebook {
     font-family: 'icons';
     speak: none;
