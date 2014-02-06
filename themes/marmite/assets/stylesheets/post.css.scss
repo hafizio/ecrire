@@ -1,16 +1,19 @@
+//= require_tree ./post
+//= require_tree ./shared
+
 .content.preview, article.post {
     position: relative;
     width:80%;
-    max-width: 700px;
-    margin: 4rem auto;
-    padding-bottom: 4rem;
-    border-bottom: #EBF2F6 1px solid;
+    max-width: 800px;
+    margin: 10rem auto;
+    padding: 3em;
+    border: 10px solid #FFF;
     word-break: break-word;
     hyphens: auto;
+    background: #F1F0EA;
+    box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.3);
 }
 
-/* Add a little circle in the middle of the border-bottom on our .post
-   just for the lolz and stylepoints. */
 article.post:after {
     display: block;
     content: "";
@@ -18,7 +21,7 @@ article.post:after {
     height: 7px;
     border: #E7EEF2 1px solid;
     position: absolute;
-    bottom: -5px;
+    bottom: -3px;
     left: 50%;
     margin-left: -5px;
     background: #fff;

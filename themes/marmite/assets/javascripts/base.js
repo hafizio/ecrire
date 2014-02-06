@@ -1,3 +1,5 @@
+//= require_tree ./blog
+
 $(function() {
   var globalFunc = $.globalEval
   $.globalEval = function(data) {
