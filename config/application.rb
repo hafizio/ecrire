@@ -12,6 +12,7 @@ module PothiboCom
 
     I18n.default_locale = :'fr-CA'
 
+    config.paths.add ['themes', config.theme, 'decorators'].join('/'), eager_load: true
     path = config.paths.add ['themes', config.theme, 'helpers'].join('/'), eager_load: true
     config.helpers_paths += path.expanded
 
