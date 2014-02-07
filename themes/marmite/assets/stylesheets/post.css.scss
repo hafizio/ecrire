@@ -2,64 +2,63 @@
 //= require_tree ./shared
 
 .content.preview, article.post {
-    position: relative;
-    width:80%;
-    max-width: 800px;
-    margin: 10rem auto;
-    padding: 3em;
-    border: 10px solid #FFF;
-    word-break: break-word;
-    hyphens: auto;
-    background: #F1F0EA;
-    box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.3);
+  position: relative;
+  width:80%;
+  max-width: 800px;
+  margin: 10rem auto;
+  padding: 3em;
+  border: 10px solid #FFF;
+  word-break: break-word;
+  hyphens: auto;
+  background: #F1F0EA;
+  box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.3);
 }
 
 article.post:after {
-    display: block;
-    content: "";
-    width: 7px;
-    height: 7px;
-    border: #E7EEF2 1px solid;
-    position: absolute;
-    bottom: -3px;
-    left: 50%;
-    margin-left: -5px;
-    background: #fff;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    box-shadow: #fff 0 0 0 5px;
+  display: block;
+  content: "";
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  margin-left: -5px;
+  background: #ECECEC;
+  border: 1px solid #C3D9FF;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
 }
 
 .post-title {
-    margin:0;
+  margin:0;
 }
 
 .post-title a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .post-excerpt p {
-    margin: 1.6rem 0 0 0;
-    font-size: 0.9em;
-    line-height: 1.6em;
+  margin: 1.6rem 0 0 0;
+  font-size: 0.9em;
+  line-height: 1.6em;
 }
 
 .post-meta {
-    display: inline-block;
-    margin: 0 0 5px 0;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.5rem;
-    color: #9EABB3;
+  display: inline-block;
+  margin: 0 0 5px 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  color: #9EABB3;
 }
 
 .post-meta a {
-    color: #9EABB3;
-    text-decoration: none;
+  color: #9EABB3;
+  text-decoration: none;
 }
 
 .post-meta a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .fb-comments.fb_iframe_widget {
   width: 700px;

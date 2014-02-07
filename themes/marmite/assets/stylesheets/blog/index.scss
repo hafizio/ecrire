@@ -36,34 +36,17 @@
   }
 }
 
-#pagination {
-  padding: 8px 0;
-  text-align: center;
-}
+#home {
+  article.post {
+    background-size: 100% auto;
 
-#articlesOverview {
-  position: relative;
-  padding: 48px 0;
-  text-align: center;
+    span, p {
+      text-shadow: 0px 1px 0px #3F4A5C;
+    }
 
-  h2 {
-    text-align: center;
-  }
-  .post {
-    text-align: left;
-    padding: 24px 0;
-    border-bottom: 1px solid #CCC;
-  }
-
-  .pagination {
-    margin: 24px 0;
-    font-size: 1.3em;
-  }
-}
-
-#posts-index {
-  .wrapper {
-    max-width: 900px;
-    margin: 0 auto;
+    .post-excerpt {
+      text-shadow: 0px -1px 0px #747474;
+      color: #FFFFFF;
+    }
   }
 }
