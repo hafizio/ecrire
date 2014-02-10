@@ -42,8 +42,8 @@ class PostDecorator < EcrireDecorator
   end
 
   def image_background
-    return "" unless record.images.count > 0
+    return "" unless record.images.favorites.count > 0
 
-    "background-image: url('#{record.images.last.url}')"
+    "background-image: url('#{record.images.favorites.first.url}')"
   end
 end
