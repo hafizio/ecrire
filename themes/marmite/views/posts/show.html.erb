@@ -2,11 +2,13 @@
 
   <article class="post">
 
-    <span class="post-meta">
-      <%= content_tag :time, l(@post.published_at, format: :long), datetime: @post.published_at %>
-    </span>
+    <header style="background-image: url('<%= @post.images.favorites.first.url %>')">
+      <span class="post-meta">
+        <%= content_tag :time, l(@post.published_at, format: :long), datetime: @post.published_at %>
+      </span>
 
-    <%= content_tag :h1, @post.title, class: %w(post-title) %>
+      <%= content_tag :h1, @post.title, class: %w(post-title) %>
+    </header>
 
     <%= content_tag :section, class: %w(post-content) do %>
       <style scoped><%= @post.stylesheet %></style>
