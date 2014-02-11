@@ -1,7 +1,7 @@
 class PostDecorator < EcrireDecorator
   def overview(options)
     content_tag :article, class: %w(post), style: image_background do
-      [header, excerpt].join.html_safe
+      header
     end
   end
 

@@ -1,8 +1,9 @@
 <main class="content" id="home">
 
-  <%= decorate @posts, :overview %>
-
-  <%= paginate @posts %>
+  <section class="posts">
+    <%= decorate @posts, :overview %>
+    <%= paginate @posts %>
+  </section>
 
 </main>
 
