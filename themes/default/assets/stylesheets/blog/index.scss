@@ -1,20 +1,3 @@
-#blogHeader {
-  margin: 100px 0;
-  height: 400px;
-  text-align: center;
-  & > img {
-    width: 160px;
-    vertical-align: top;
-  }
-
-  & > p {
-    width: 25%;
-    margin: 60px auto;
-    font-size: 1.4em;
-    line-height: 1.5em;
-  }
-}
-
 #indexNavigation {
   height: 500px;
   text-align: center;

@@ -1,0 +1,82 @@
+@mixin fadedown-steps {
+  0% {
+    opacity: 0;
+    bottom: 8px;
+  }
+
+  25% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0;
+    bottom: -16px;
+  }
+
+  100% {
+    opacity: 0;
+    bottom: 8px;
+  }
+}
+
+#blogHeader {
+  height: 100%;
+  text-align: center;
+  & > img {
+    width: 160px;
+    vertical-align: top;
+  }
+
+  & > p {
+    width: 25%;
+    margin: 60px auto;
+    font-size: 1.4em;
+    line-height: 1.5em;
+  }
+
+  h1 {
+    font-weight: lighter;
+    font-size: 4rem;
+    padding: 10% 0 0;
+    text-shadow: 0 1px 0px #F0E9DA;
+    margin: 0;
+  }
+
+  &.scrolled {
+    &:after {
+      content: "";
+    }
+  }
+
+  &:not(.scrolled) {
+    &:after {
+      -webkit-animation-name: fadedown;
+      -webkit-animation-duration: 4s;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: ease;
+    }
+  }
+
+  &:after {
+    font-family: entypo;
+    font-size: 4rem;
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+  }
+}
+
+#posts-index section {
+  min-height: 400px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+@-webkit-keyframes fadedown {
+  @include fadedown-steps;
+}
+
+@keyframes fadedown {
+  @include fadedown-steps;
+}

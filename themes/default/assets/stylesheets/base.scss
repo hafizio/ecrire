@@ -13,12 +13,7 @@ $fonts: Helvetica, sans-serif;
 }
 
 html, body {
-  display: flex;
-  flex: 1 auto;
-}
-
-html {
-  min-height: 100%;
+  height: 100%;
 }
 
 a {
