@@ -1,0 +1,109 @@
+@mixin button {
+  background: #86B8F0;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 0 #BEBEBE;
+  font-size: 1em;
+  color: #FFF;
+
+  &:active {
+    box-shadow: none;
+  }
+}
+
+@mixin social {
+  .social {
+     & > div, & > iframe {
+       display: inline-block;
+       vertical-align: middle;
+       margin: 0 12px;
+     }
+    .fb-comments.fb_iframe_widget {
+      width: 700px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+@mixin recipe {
+  section.recipe {
+    width: 100%;
+    position: relative;
+
+    border-top: 1px solid rgb(134, 57, 57);
+    background-color: #ce0007;
+    background-image: image-url('marmite-section-bg.png');
+    overflow: hidden;
+    padding: 2rem 6rem;
+
+    p {
+      color: #E78C8C;
+      font-size: 1.2em;
+      text-align: center;
+    }
+    a {
+      color: rgb(255, 232, 232);
+      font-family: lobster;
+    }
+
+    &:after {
+      content: '';
+      background-image: image-url('logo-watermark.png');
+      background-size: auto 100%;
+      background-position: top right;
+      position: absolute;
+      opacity: 0.2;
+      left: -10px;
+      top: -8px;
+      bottom: -8px;
+      width: 108px;
+    }
+  }
+}
+
+@mixin post {
+  article.content {
+    position: relative;
+    font-weight: lighter;
+    font-size: 2.0rem;
+    line-height: 3.2rem;
+    width:80%;
+    max-width: 800px;
+    margin: 10rem auto;
+    border: 10px solid #FFF;
+    word-break: break-word;
+    hyphens: auto;
+    background: #F1F0EA;
+    box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.3);
+
+    .post-content {
+      & > h1, & > h2, & > h3, & > h4, & > p {
+        padding-left: 6rem;
+        padding-right: 6rem;
+      }
+
+      & > div, & > img {
+        margin-bottom: 1.6em;
+      }
+    }
+  }
+}
+
+[id*=post-] {
+  @include post;
+  @include social;
+  @include recipe;
+}
+
+#editorSideContent {
+  @include post;
+  article.content {
+    min-width: none;
+    & > *:not(pre) {
+      margin-left: 2.5%;
+    }
+  }
+}
+

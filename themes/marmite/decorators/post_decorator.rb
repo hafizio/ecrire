@@ -1,6 +1,6 @@
 class PostDecorator < EcrireDecorator
   def overview(options)
-    content_tag :article, class: %w(post), style: image_background do
+    content_tag :article, class: %w(post) do
       header
     end
   end
@@ -23,7 +23,7 @@ class PostDecorator < EcrireDecorator
   protected
 
   def header
-    content_tag :header, class: %w(post-header) do
+    content_tag :header, class: %w(post header), style: image_background do
       [
         content_tag(:span, time, class: %w(post-meta)),
         content_tag(:h2, link_to(record.title, post_path(record.published_at.year, record.published_at.month, record.slug)), class: %w(post-title))

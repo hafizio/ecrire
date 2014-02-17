@@ -1,9 +1,9 @@
-<%= content_tag :main, class: %w(content), id: "post-#{@post.id}", role: "main" do %>
+<%= content_tag :main, class: %w(content), id: "post-#{@post.id}" do %>
 
-  <article class="post">
+  <article class="post content">
 
-    <header style="background-image: url('<%= @post.images.favorites.first.url %>')">
-      <span class="post-meta">
+    <header class="post header" style="background-image: url('<%= @post.images.favorites.first.url %>')">
+      <span class="post-published">
         <%= content_tag :time, l(@post.published_at, format: :long), datetime: @post.published_at %>
       </span>
 
@@ -17,7 +17,7 @@
 
   </article>
 
-  <section class="comments">
+  <section class="social comments">
     <%= render 'comments', url: post_path(@post.published_at.year, @post.published_at.month, @post.slug, only_path: false) %>
   </section>
 
