@@ -14,8 +14,10 @@
 
 @mixin social {
   .social.buttons {
-    .fb-like {
-      min-width: 100px;
+    & > a, & > div {
+      display: inline-block;
+      height: 20px;
+      line-height: 20px;
     }
   }
 }
