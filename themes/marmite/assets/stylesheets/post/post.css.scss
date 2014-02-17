@@ -15,9 +15,9 @@
 @mixin social {
   .social.buttons {
     & > a, & > div {
-      display: inline-block;
       height: 20px;
       line-height: 20px;
+      vertical-align: top;
     }
   }
 }
