@@ -14,6 +14,7 @@
 
 @mixin social {
   .social.buttons {
+    margin-top: 18px;
     & > a, & > div {
       height: 20px;
       line-height: 20px;
