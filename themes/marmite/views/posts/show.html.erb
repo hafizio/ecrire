@@ -8,6 +8,13 @@
       </span>
 
       <%= content_tag :h1, @post.title, class: %w(post-title) %>
+
+      <div class="social buttons">
+
+        <a href="//fr.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" ><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
+
+        <div class="fb-like" data-href="<%= post_path(@post.published_at.year, @post.published_at.month, @post.slug, only_path: false) %>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+      </div>
     </header>
 
     <%= content_tag :section, class: %w(post-content) do %>
