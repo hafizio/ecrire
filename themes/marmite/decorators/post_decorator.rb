@@ -5,6 +5,12 @@ class PostDecorator < EcrireDecorator
     end
   end
 
+  def link(options)
+    content_tag :li, class: %w(post) do
+      link_to record.title, post_path(record.published_at.year, record.published_at.month, record.slug, only_path: false)
+    end
+  end
+
   def suggested(options)
     content_tag :li do
       content = [
