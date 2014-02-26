@@ -48,8 +48,6 @@ module PothiboCom
       (Rails.application.root + ['themes', config.theme, 'assets', asset_type].join('/')).to_s
     end
 
-    config.action_dispatch.default_headers['Access-Control-Allow-Origin'] = '*'
-
   end
 
 end
