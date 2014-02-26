@@ -1,3 +1,9 @@
+@mixin small-screen {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
 @mixin button {
   background: #86B8F0;
   border: none;
@@ -51,7 +57,7 @@
 
     p {
       color: #E78C8C;
-      font-size: 1.2em;
+      font-size: 2.2rem;
       text-align: center;
     }
     a {
@@ -89,10 +95,19 @@
     background: #F1F0EA;
     box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.3);
 
+    @include small-screen {
+      font-size: 1.5rem;
+      line-height: 2.4rem;
+    }
+
     .post-content {
       & > h1, & > h2, & > h3, & > h4, & > p {
         padding-left: 6rem;
         padding-right: 6rem;
+        @include small-screen {
+          padding-left: 3rem;
+          padding-right: 3rem;
+        }
       }
 
       & > div, & > img {

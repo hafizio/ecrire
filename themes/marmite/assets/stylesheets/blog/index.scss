@@ -1,5 +1,10 @@
-@mixin posts-large {
+@mixin small-screen {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
 
+@mixin article {
   article.post {
     position: relative;
     width: 80%;
@@ -18,17 +23,6 @@
     .post-excerpt {
       text-shadow: 0px -1px 0px #747474;
       color: #FFFFFF;
-    }
-  }
-}
-
-@mixin posts-small {
-  @media (max-width: 600px) {
-    article.post {
-      h2 a {
-        font-size: 3rem;
-        line-height: 1rem;
-      }
     }
   }
 }
@@ -72,6 +66,17 @@
 }
 
 #home {
-  @include posts-large;
-  @include posts-small;
+  @include article;
+
+  @include small-screen {
+    article.post header {
+      span time {
+        font-size: 1.4rem;
+      }
+      h2 a {
+        font-size: 2.2rem;
+        line-height: 1rem;
+      }
+    }
+  }
 }
