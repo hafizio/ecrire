@@ -1,3 +1,15 @@
+@mixin small-screen {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin large-screen {
+  @media (min-width: 601px) {
+    @content;
+  }
+}
+
 @mixin login {
   #new_session {
     line-height: 50px;
@@ -48,64 +60,90 @@
   }
 }
 
-@mixin facebook {
-  .fb-like {
-    margin: 10px 0 0 24px;
+@mixin logo {
+  #logo {
+    text-align: center;
+    position: relative;
+    div {
+      position: absolute;
+      z-index: 1;
+
+      @include small-screen {
+        height: 65px;
+        width: 150px;
+        background-image: image-url('logo-small.png');
+        background-repeat: no-repeat;
+        background-position: 50% center;
+      }
+
+      @include large-screen {
+        top: -20px;
+        left: calc(50% - 110px);
+        left: -webkit-calc(50% - 110px);
+        height: 150px;
+        width: 220px;
+        background-image: image-url('logo.png');
+
+        a {
+          margin: 48px 0;
+          display: inline-block;
+          text-shadow: 0 2px 3px rgba(143, 143, 143, 0.51);
+          font-size: 3.6rem;
+        }
+      }
+    }
   }
 }
 
-@media only screen and (max-width: 600px) {
-  header.site-header #Logo {
-    height: 65px;
-    width: 150px;
-    top: 0;
-    left: calc(50% - 75px);
-    left: -webkit-calc(50% - 75px);
-    background-image: image-url('logo-small.png');
-    background-repeat: no-repeat;
-    background-position: 50% center;
-  }
-
-  .site-header #Logo .title {
-    padding-top: 16px;
-  }
-}
-
-@media (min-width: 601px) {
-  .site-header #Logo {
-    height: 150px;
-    width: 220px;
-    top: -12px;
-    left: calc(50% - 110px);
-    left: -webkit-calc(50% - 110px);
-    background-image: image-url('logo.png');
-  }
-
-  .site-header #Logo .title {
-    margin: 48px 0;
-    text-shadow: 0 2px 3px rgba(143, 143, 143, 0.51);
-  }
-}
-
-.site-header {
+@mixin menu {
   position: relative;
-  min-height: 67px;
-  background: #333;
-  font-size: 1.1em;
+  display: flex;
+  display: -webkit-flex;
+
+  height: 67px;
+  line-height: 52px;
+
   margin-top: 12px;
+  padding: 8px 12px;
 
-  @include login;
-  @include facebook;
+  background: #333;
+  color: #EFEFEF;
 
-  .wrapper {
-    width: 80%;
-    max-width: 800px;
-    margin: 0 auto;
+  font-family: lobster;
+  font-size: 2rem;
+
+  text-decoration: underline;
+
+  a:not(:hover) {
+    color: inherit;
+    text-shadow: 0 -1px 2px #333;
+  }
+
+  & > div {
+    flex: 1 100%;
+    -webkit-flex: 1 100%;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  .fb-like {
+    span {
+      vertical-align: middle !important;
+    }
   }
 }
 
-.site-header:before, .site-header:after {
+nav.site {
+  @include login;
+  @include logo;
+  @include menu;
+}
+
+nav.site:before, nav.site:after {
   position: absolute;
+  left: 0;
   content: "";
   display: block;
   width: 100%;
@@ -113,7 +151,7 @@
   background-repeat: repeat-x;
 }
 
-.site-header:before {
+nav.site:before {
   top: 0;
   background-image: image-url("stitches.png"), linear-gradient(to top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 100%);
   background-image: image-url("stitches.png"), -webkit-linear-gradient(bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 100%);
@@ -121,7 +159,7 @@
   background-position: 0 5px, top;
 }
 
-.site-header:after {
+nav.site:after {
   bottom: 0;
   background-image: image-url("stitches.png"), linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 100%);
   background-image: image-url("stitches.png"), -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 100%);
@@ -129,21 +167,8 @@
   background-position: top, top;
 }
 
-.site-header #Logo {
-  position: absolute;
-  z-index: 2;
-  font-family: Lobster;
-}
-
-.site-header a {
+nav.site a {
   text-decoration: none;
   font-size: 1.1em;
-}
-
-.site-header #Logo .title {
-  font-family: Lobster;
-  display: block;
-  text-align: center;
-  color: #EFEFEF;
 }
 
