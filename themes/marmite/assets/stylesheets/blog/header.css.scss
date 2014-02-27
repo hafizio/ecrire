@@ -66,13 +66,13 @@
     position: relative;
     div {
       position: absolute;
+      background-repeat: no-repeat;
       z-index: 1;
 
       @include small-screen {
         height: 65px;
         width: 150px;
         background-image: image-url('logo-small.png');
-        background-repeat: no-repeat;
         background-position: 50% center;
       }
 
