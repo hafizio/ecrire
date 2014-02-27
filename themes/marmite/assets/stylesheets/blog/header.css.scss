@@ -112,8 +112,6 @@
   font-family: lobster;
   font-size: 2rem;
 
-  text-decoration: underline;
-
   a:not(:hover) {
     color: inherit;
     text-shadow: 0 -1px 2px #333;
@@ -123,8 +121,19 @@
     flex: 1 100%;
     -webkit-flex: 1 100%;
 
+    &:first-child {
+      padding-left: 2%;
+      a:before {
+        content: '⌂';
+        font-family: entypo;
+        padding-right: 8px;
+        font-size: 3rem;
+      }
+    }
+
     &:last-child {
       text-align: right;
+      padding-right: 2%;
     }
   }
 
