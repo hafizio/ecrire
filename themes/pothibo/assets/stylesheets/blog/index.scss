@@ -36,44 +36,42 @@
 }
 
 @mixin post {
-  display: inline-block;
-  width: 350px;
-  vertical-align: top;
-  margin: 12px;
-  text-align: left;
-  background-color: rgb(250, 247, 234);
-  border: 1px solid #AA9C77;
-  border-radius: 3px;
+  .post {
+    display: flex;
+    display: -webkit-flex;
+    margin: 2em 0;
+    align-items: center;
 
-  & > h3, & > .excerpt, & > .timestamp {
-    margin: 24px;
-  }
+    & > h3 {
+      flex: 3;
+      margin: 0;
+      font-size: 1.6em;
+      text-decoration: none;
+    }
 
-  & > h3 {
-    font-size: 1.6em;
-    text-decoration: none;
-  }
-
-  & > .timestamp {
-    color: #C4B596;
+    & > .timestamp {
+      flex: 1;
+      color: #C4B596;
+      text-align: center;
+    }
   }
 }
 
 #blogHeader {
-  flex: 0 300px;
-  text-align: center;
-  margin: 0 auto;
+  display: flex;
+  display: -webkit-flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  background-color: rgba(78, 48, 9, 0.1);
+  color: rgb(75, 71, 52);
+  justify-content: center;
+  -webkit-justify-content: center;
+  padding: 0 10em;
+  box-shadow: inset 0px -6px 5px -6px rgb(117, 95, 49);
 
   h1 {
-    font-size: 3em;
-    text-shadow: 0 3px 3px #B8A990;
-  }
-
-  p {
-    width: 600px;
-    font-size: 1.3em;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 2em;
+    font-size: 2em;
   }
 }
 
@@ -83,23 +81,18 @@
 }
 
 #articlesOverview {
-  flex: 1 auto;
-  padding: 48px 0;
+  display: flex;
+  display: -webkit-flex;
+  flex: 2 auto;
   margin: 0 0 50px 0;
+  align-items: center;
 
-  h2 {
-    text-align: left;
-    padding: 10px 24px;
-    background: rgba(219, 215, 204, 0.5);
+  ul {
+    flex: 1 auto;
+    margin: 0 5%;
   }
 
-  .wrapper {
-    text-align: center;
-  }
-
-  .post {
-    @include post;
-  }
+  @include post;
 
   .pagination {
     display: inline-block;
@@ -111,7 +104,7 @@
 footer {
   display: flex;
   flex-direction: column;
-  flex: 0 180px;
+  flex: 1 180px;
   position: relative;
 
   & > h5 {

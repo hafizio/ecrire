@@ -1,6 +1,5 @@
 <header id="blogHeader">
-  <h1>Bonjour.</h1>
-
+  <h1>Hello</h1>
   <p>If you're a rails, or frontend developer, you might find interesting article I've wrote based on personal experience. My goal is to write about issues I faced and solution I found so you don't find yourself wasting time on the same stuff.</p>
 
   <p>I'm also available for freelancing gigs right now. Interested?</p>
@@ -9,22 +8,17 @@
 </header>
 
 <section id="articlesOverview">
-  <h2>
-    <span><%= @posts.total_count %> articles published so far</span>
-    <%= paginate @posts %>
-  </h2>
-  <div class="wrapper">
-    <% @posts.each do |post| %>
+
+  <ul>
+    <% @posts.all.each do |post| %>
       <%= render "post", post: post %>
     <% end %>
-  </div>
+  </ul>
 </section>
 
 
 <footer>
-  <h5>Proudly made by</h5>
   <div class="wrapper">
-    <%= image_tag "profile.png", alt: "I'm signing the Declaration of independance!" %>
     <div class="author">
       <h2>Pier-Olivier Thibault</h2>
       <a class="icons" href="https://twitter.com/pothibo" target="_blank">&#62217;</a>
