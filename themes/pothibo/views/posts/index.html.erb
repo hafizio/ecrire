@@ -1,13 +1,14 @@
-<header id="blogHeader">
-  <h1>Hello</h1>
-  <p>If you're a rails, or frontend developer, you might find interesting article I've wrote based on personal experience. My goal is to write about issues I faced and solution I found so you don't find yourself wasting time on the same stuff.</p>
-
-  <p>I'm also available for freelancing gigs right now. Interested?</p>
-
-  <p><a href="mailto:pothibo@gmail.com">Send me an e-mail!</a></p>
+<header>
+  <h1>P.O Thibault</h1>
+  <p>Programming.</p>
+  <div class="author">
+    <a class="icons" href="https://twitter.com/pothibo" target="_blank">&#62217;</a>
+    <a class="icons" href="https://github.com/pothibo" target="_blank">&#62208;</a>
+    <a class="icons" href="mailto:pothibo@gmail.com">&#9993;</a>
+  </div>
 </header>
 
-<section id="articlesOverview">
+<section>
 
   <ul>
     <% @posts.all.each do |post| %>
@@ -18,11 +19,4 @@
 
 
 <footer>
-  <div class="wrapper">
-    <div class="author">
-      <h2>Pier-Olivier Thibault</h2>
-      <a class="icons" href="https://twitter.com/pothibo" target="_blank">&#62217;</a>
-      <a class="icons" href="https://github.com/pothibo" target="_blank">&#62208;</a>
-    </div>
-  </div>
 </footer>

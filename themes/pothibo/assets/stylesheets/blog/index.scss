@@ -1,29 +1,6 @@
-@mixin footer-content {
-  background: rgba(95, 86, 74, 1);
-  width: 100%;
-  color: #FFF;
-  flex: 1 100%;
-
-  & > img, & > .author {
-    display: inline-block;
-    vertical-align: top;
-  }
-
-  & > img {
-    height: 100px;
-    margin: 12px 24px;
-  }
-
-  & > .author {
-    margin: 36px 0 24px 0;
-
-    h2 {
-      margin: 0;
-    }
-  }
-
+@mixin entypo {
   .icons {
-    font-family: entypo-social;
+    font-family: entypo, entypo-social;
     font-size: 3.5em;
     text-decoration: none;
     color: inherit;
@@ -57,72 +34,61 @@
   }
 }
 
-#blogHeader {
-  display: flex;
-  display: -webkit-flex;
-  flex: 1 0 auto;
-  flex-direction: column;
-  background-color: rgba(78, 48, 9, 0.1);
-  color: rgb(75, 71, 52);
-  justify-content: center;
-  -webkit-justify-content: center;
-  padding: 0 10em;
-  box-shadow: inset 0px -6px 5px -6px rgb(117, 95, 49);
-
-  h1 {
-    margin: 2em;
-    font-size: 2em;
-  }
-}
-
-#pagination {
-  padding: 8px 0;
-  text-align: center;
-}
-
-#articlesOverview {
-  display: flex;
-  display: -webkit-flex;
-  flex: 2 auto;
-  margin: 0 0 50px 0;
-  align-items: center;
-
-  ul {
-    flex: 1 auto;
-    margin: 0 5%;
-  }
-
-  @include post;
-
-  .pagination {
+@mixin pagination {
+  nav.pagination {
     display: inline-block;
     margin: 24px 0;
     font-size: 1.3em;
+    padding: 8px 0;
+    text-align: center;
   }
 }
 
-footer {
-  display: flex;
-  flex-direction: column;
-  flex: 1 180px;
-  position: relative;
-
-  & > h5 {
-    position: absolute;
-    top: -44px;
-    width: 100%;
-    font-family: 'silent-reaction';
-    font-size: 3em;
+@mixin header {
+  header {
+    display: flex;
+    display: -webkit-flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    color: rgb(75, 71, 52);
+    padding: 0 10em;
+    font-size: 2em;
     text-align: center;
-    margin: 0;
-    color: rgba(95, 86, 74, 1);
+    h1 {
+      font-size: 2em;
+    }
   }
+}
 
-  & > .wrapper {
-    @include footer-content;
-  }
+@mixin body {
+  section {
+    display: flex;
+    display: -webkit-flex;
+    flex: 2 auto;
+    margin: 0 0 50px 0;
+    align-items: center;
 
-  a {
-    color: inherit;
+    ul {
+      flex: 1 auto;
+      margin: 0 5%;
+      @include post;
+    }
+
+    @include pagination;
   }
+}
+
+@mixin footer {
+  footer {
+    display: flex;
+    flex-direction: column;
+    flex: 1 180px;
+  }
+}
+
+#posts-index {
+  @include header;
+  @include body;
+  @include footer;
+  @include entypo;
 }

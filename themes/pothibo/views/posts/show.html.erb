@@ -1,7 +1,10 @@
 <%= content_tag :section, id: "post-#{@post.id}", class: %w(post) do %>
 
+  <nav>
+    <%= link_to 'P.O Thibault', :root %>
+  </nav>
+
   <header class="post title">
-    <%= link_to image_tag("profile.png", alt: "I'm signing the Declaration of independance!"), root_path, class: %w(logo home link) %>
     <%= content_tag :h1, @post.title, class: %w(entry-title) %>
   </header>
 
