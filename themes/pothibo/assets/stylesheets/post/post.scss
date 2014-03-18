@@ -1,9 +1,21 @@
 @mixin navigation {
   nav {
     background: #FFF;
-    padding: 12px 10%;
+    padding: 4px 10%;
     font-size: 1.6em;
+    line-height: 1.8em;
     border-bottom: 1px solid #BABABA;
+
+    img {
+      height: 48px;
+    }
+    a, img {
+      text-decoration: none;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 8px;
+    }
+
   }
 }
 @mixin button {

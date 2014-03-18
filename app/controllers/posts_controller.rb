@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
   before_action :pagination, only: :index
 
+  helper_method :posts
+
   def index
-    @posts = Post.published.order("published_at DESC").page(params[:page]).per(params[:per_page])
     respond_to do |format|
       format.html
       format.rss
@@ -21,6 +22,10 @@ class PostsController < ApplicationController
   end
 
   protected
+
+  def posts
+    @posts ||= Post.published.order("published_at DESC").page(params[:page]).per(params[:per_page])
+  end
 
   def pagination
     params[:per_page] ||= 10
