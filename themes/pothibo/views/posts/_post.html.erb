@@ -1,5 +1,5 @@
 <li id="post-<%= post.id %>" class="post">
   <%= content_tag :span, l(post.published_at.to_date, format: :long), class: %w(timestamp) %>
   <h3><%= link_to post.title, post_path(post.published_at.year, l(post.published_at, format: "%m"), post, trailing_slash: true) %></h3>
-</article>
+</li>
 

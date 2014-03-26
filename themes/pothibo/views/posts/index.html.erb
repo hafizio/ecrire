@@ -11,15 +11,14 @@
 
   <section>
 
-    <ul>
-      <% posts.each do |post| %>
-        <%= render "post", post: post %>
-      <% end %>
-    </ul>
-    <%= paginate posts %>
+    <div class="wrapper">
+      <ul>
+        <% posts.each do |post| %>
+          <%= render "post", post: post %>
+        <% end %>
+      </ul>
+      <%= paginate posts %>
+    </div>
   </section>
 </main>
 
-
-<footer>
-</footer>
