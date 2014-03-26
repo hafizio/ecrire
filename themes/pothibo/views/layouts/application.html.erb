@@ -12,7 +12,7 @@
   <%= open_graph_tags %>
 </head>
 <body id="<%= controller_name %>-<%= action_name %>">
-  <% if signed_in? %>
+  <% if signed_in? && current_page?(:root) %>
     <%= admin_navigation %>
   <% end %>
 
