@@ -1,9 +1,5 @@
-<%= content_tag :section, id: "post-#{@post.id}", class: %w(post) do %>
+<%= content_tag :main, id: "post-#{@post.id}", class: %w(post) do %>
 
-  <nav>
-    <%= image_tag 'profile.jpg' %>
-    <%= link_to 'Articles', :root %>
-  </nav>
 
   <header class="post title">
     <%= content_tag :h1, @post.title, class: %w(entry-title) %>
