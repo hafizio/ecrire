@@ -1,22 +1,24 @@
-<header>
-  <%= image_tag 'profile.jpg' %>
-  <div class="author">
-    <h1>P.O Thibault</h1>
-    <a class="icons" href="https://twitter.com/pothibo" target="_blank">&#62217;</a>
-    <a class="icons" href="https://github.com/pothibo" target="_blank">&#62208;</a>
-    <a class="icons" href="mailto:pothibo@gmail.com">&#9993;</a>
-  </div>
-</header>
+<main>
+  <header>
+    <%= image_tag 'profile.jpg' %>
+    <div class="author">
+      <h1>P.O Thibault</h1>
+      <a class="icons" href="https://twitter.com/pothibo" target="_blank">&#62217;</a>
+      <a class="icons" href="https://github.com/pothibo" target="_blank">&#62208;</a>
+      <a class="icons" href="mailto:pothibo@gmail.com">&#9993;</a>
+    </div>
+  </header>
 
-<section>
+  <section>
 
-  <ul>
-    <% posts.each do |post| %>
-      <%= render "post", post: post %>
-    <% end %>
-  </ul>
-  <%= paginate posts %>
-</section>
+    <ul>
+      <% posts.each do |post| %>
+        <%= render "post", post: post %>
+      <% end %>
+    </ul>
+    <%= paginate posts %>
+  </section>
+</main>
 
 
 <footer>
