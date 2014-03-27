@@ -35,6 +35,10 @@ $width: 100%;
       text-align: right;
       padding: 4px 3em 0 3em;
     }
+
+    a {
+      font-weight: lighter;
+    }
   }
 }
 
@@ -49,12 +53,13 @@ $width: 100%;
 @mixin header {
   header {
     margin: 0 auto;
-    flex: 1 auto;
+    flex: 1 40%;
     color: rgb(75, 71, 52);
     font-size: 2em;
     justify-content: center;
     align-items: center;
     display: flex;
+    padding: 0 0 0 2em;
 
     img {
       width: 128px;
@@ -79,14 +84,13 @@ $width: 100%;
   section {
     display: flex;
     display: -webkit-flex;
-    flex: 1 auto;
+    flex: 1 60%;
     margin: 0 auto;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 
     .wrapper {
-      flex: 4 100%;
       ul {
         margin: 0;
         padding: 0 2em 0 0;
