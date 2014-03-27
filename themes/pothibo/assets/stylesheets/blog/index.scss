@@ -88,7 +88,8 @@ $width: 100%;
     .wrapper {
       flex: 4 100%;
       ul {
-        margin: 0 1em;
+        margin: 0;
+        padding: 0 2em 0 0;
         @include post;
       }
       @include pagination;
