@@ -1,18 +1,53 @@
+@import 'mailing';
+
 nav.site {
+  display: flex;
+  display: -webkit-flex;
   background: #FFF;
   padding: 4px 10%;
   font-size: 1.6em;
-  line-height: 1.8em;
   border-bottom: 1px solid #BABABA;
+  align-items: center;
+  -webkit-align-items: center;
 
   img {
     height: 48px;
+    -webkit-flex: 0 0 48px;
+    flex: 0 0 48px;
   }
+
+  a {
+    -webkit-flex: 0 0 auto;
+    flex: 0 0 auto;
+    margin: 0 1em;
+  }
+
+  .spacer {
+    -webkit-flex: 5 auto;
+    flex: 5 auto;
+  }
+
+  form {
+    -webkit-flex: 1 auto;
+    flex: 1 auto;
+
+    @include email;
+    @include submit;
+
+    input[type=email] {
+      font-family: 'Open sans';
+      font-size: 0.8em;
+      width: 250px;
+    }
+
+    button {
+      font-size: 0.65em;
+      margin-left: 12px;
+    }
+  }
+
   a, img {
     text-decoration: none;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 8px;
   }
 
 }
