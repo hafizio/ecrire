@@ -2,13 +2,16 @@ main section#opensource {
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
+  -webkit-flex-direction: column;
   width: 100%;
   background: #6d645c;
   padding: 5em 0;
   justify-content: space-around;
+  -webkit-justify-content: space-around;
   color: #E4DBCE;
   text-align: center;
   align-items: center;
+  -webkit-align-items: center;
   font-size: 1.2em;
 
   h2 {
@@ -19,11 +22,14 @@ main section#opensource {
   article {
     width: 50%;
     display: flex;
+    display: -webkit-flex;
     align-items: center;
+    -webkit-align-items: center;
     margin: 3em 0;
 
     a {
       flex: 0 0 300px;
+      -webkit-flex: 0 0 300px;
     }
 
     p {

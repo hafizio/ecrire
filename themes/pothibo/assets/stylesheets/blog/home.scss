@@ -18,16 +18,20 @@
     display: -webkit-flex;
     margin: 2em 0;
     align-items: center;
+    align-items: center;
 
     & > h3 {
       flex: 3;
+      -webkit-flex: 3;
       margin: 0;
       font-size: 1.6em;
       text-decoration: none;
+      padding-right: 1em;
     }
 
     & > .timestamp {
       flex: 1;
+      -webkit-flex: 1;
       color: #998A6B;
       text-align: right;
       padding: 4px 3em 0 3em;
@@ -50,10 +54,13 @@
 @mixin author {
   header {
     flex: 1 40%;
+    -webkit-flex: 1 40%;
     color: rgb(75, 71, 52);
     font-size: 2em;
     justify-content: center;
+    -webkit-justify-content: center;
     display: flex;
+    display: -webkit-flex;
     padding: 0 0 0 2em;
 
     img {
@@ -76,7 +83,9 @@
       display: flex;
       display: -webkit-flex;
       flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
       align-items: center;
+      -webkit-align-items: center;
     }
   }
 }
@@ -86,18 +95,20 @@
     display: flex;
     display: -webkit-flex;
     align-items: center;
+    -webkit-align-items: center;
     justify-content: center;
+    -webkit-justify-content: center;
     height: 100vh;
     @include author;
     @include pagination;
 
     ul {
       margin: 0;
-      padding: 0 2em 0 0;
     }
 
     div.paginated.posts {
       flex: 1 60%;
+      -webkit-flex: 1 60%;
       @include post;
     }
   }
@@ -114,8 +125,6 @@
   }
 
   main {
-    flex: 1 auto;
-    flex-wrap: wrap;
     width: 100%;
     section h2 {
       text-align: center;
