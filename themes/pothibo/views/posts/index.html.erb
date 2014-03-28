@@ -1,5 +1,5 @@
 <main>
-  <section class="posts">
+  <section id="posts">
     <header>
       <%= image_tag 'profile.jpg' %>
       <div class="author">
@@ -19,8 +19,27 @@
     </div>
   </section>
 
-  <section class="opensource">
-    <h2>Opensource'd</h2>
+  <section id="mailingList">
+    <h2>Never miss an update</h2>
+    <form action="http://pothibo.us4.list-manage.com/subscribe/post?u=c1a7606ebf0d844b14ef03fdf&amp;id=a0ae11323b" method="post" target="_blank" novalidate>
+      <p>Get exclusive content and stay up to date by signing up to my mailing list.</p>
+      <input type="email" value="" name="EMAIL" class="required email" placeholder="your@email.com">
+      <button>Subscribe</button>
+      <p class="no-span">You will never receive spam, ever.</p>
+    </form>
+
   </section>
+
+  <section id="opensource">
+    <h2>Some of my open source work</h2>
+
+    <article>
+      <a href="https://github.com/pothibo/ecrire">
+        <%= image_tag 'ecrire.png' %>
+      </a>
+      <p>Ecrire is a blog engine written in Ruby On Rails. With its lightweight HTML editor, you can create beautiful and unique posts.</p>
+    </article>
+  </section>
+
 </main>
 

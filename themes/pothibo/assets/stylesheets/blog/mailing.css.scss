@@ -1,0 +1,40 @@
+@mixin email {
+  input[type="email"] {
+    border: 1px solid #BABABA;
+    line-height: 1.6em;
+    font-size: 1.6em;
+    padding: 0 8px;
+  }
+}
+
+@mixin submit {
+  button {
+    background: rgb(178, 197, 173);
+    border: 1px solid #81A78A;
+    border-radius: 3px;
+    line-height: 1.6em;
+    font-size: 1.4em;
+    vertical-align: top;
+    color: rgb(53, 80, 69);
+  }
+}
+
+main section#mailingList {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  width: 100%;
+  height: 800px;
+  background: #E4DBCE;
+  justify-content: space-around;
+  font-size: 1.2em;
+
+  form {
+    height: 500px;
+    width: 50%;
+    text-align: center;
+    align-self: center;
+    @include email;
+    @include submit;
+  }
+}
