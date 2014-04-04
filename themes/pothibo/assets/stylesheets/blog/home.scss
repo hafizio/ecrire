@@ -62,6 +62,7 @@
     display: flex;
     display: -webkit-flex;
     padding: 0 0 0 2em;
+    align-items: center;
 
     img {
       width: 128px;
@@ -71,10 +72,6 @@
       font-size: 1.2em;
       margin: 0;
       width: 100%;
-    }
-    img, .author {
-      vertical-align: middle;
-      display: inline-block;
     }
 
     .author {
@@ -99,8 +96,16 @@
     justify-content: center;
     -webkit-justify-content: center;
     height: 100vh;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+
     @include author;
     @include pagination;
+
+    @include large-screen {
+      flex-direction: row;
+      -webkit-flex-direction: row;
+    }
 
     ul {
       margin: 0;
