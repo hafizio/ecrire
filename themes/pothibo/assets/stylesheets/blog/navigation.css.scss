@@ -34,10 +34,15 @@ nav.site {
     @include email;
     @include submit;
 
+    label {
+      font-size: 0.8em;
+      padding: 0 1em;
+    }
+
     input[type=email] {
       font-family: 'Open sans';
-      font-size: 0.8em;
-      width: 250px;
+      font-size: 0.7em;
+      width: 200px;
     }
 
     button {
