@@ -1,10 +1,9 @@
-require 'test_helper'
+require 'controllers/base_controller_test'
 
-class Admin::PostsControllerTest < ActionController::TestCase
-  attr_reader :manager
+class Admin::PostsControllerTest < BaseControllerTest
 
   def setup
-    proxy = @controller.env['warden'] = @request.env['warden'] = Warden::Proxy.new(@request.env, manager)
+    super
     proxy.set_user users(:pothibo)
   end
 
@@ -24,10 +23,33 @@ class Admin::PostsControllerTest < ActionController::TestCase
     assert_redirected_to post_path(@post.published_at.year, I18n.l(@post.published_at, format: '%m'), @post, trailing_slash: true)
   end
 
-  protected
-
-  def manager
-    @manager ||= Warden::Manager.new(self)
+  test 'Show draft posts' do
+    get :index
+    assigns(:posts).each do |post|
+      assert !post.published?
+    end
   end
+
+  test 'Show published posts' do
+    get :index, status: :published
+    assigns(:posts).each do |post|
+      assert post.published?
+    end
+  end
+
+  test 'pagination of posts' do
+    get :index
+    assert_equal assigns(:posts).current_page, 1
+    assert assigns(:posts).count <= 10
+  end
+
+  test 'customize pagination of posts' do
+    per = 1
+    page = 2
+    get :index, per: per, page: page
+    assert_equal assigns(:posts).current_page, page
+    assert assigns(:posts).count <= per
+  end
+
 end
 
