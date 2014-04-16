@@ -65,6 +65,12 @@ fr-CA:
     application:
       admin: "Administration"
 
+  sessions:
+    email: "Email"
+    password: "Password"
+    submit: "Login"
+
+
   admin:
     navigation:
       posts: "Entrées"
