@@ -6,10 +6,9 @@ class PostsController < ApplicationController
     @posts = Post.published.order("published_at DESC").page(params[:page]).per(params[:per_page])
     respond_to do |format|
       format.html
-      format.js { render :index, layout: false }
       format.rss
       format.json do
-        @response.headers['Access-Control-Allow-Origin'] = '*'
+        headers['Access-Control-Allow-Origin'] = '*'
       end
     end
   end
